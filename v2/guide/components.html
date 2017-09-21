@@ -1167,7 +1167,7 @@ new Vue({
 <h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><blockquote>
 <p>2.1.0 新增</p>
 </blockquote>
-<p>作用域插槽是一种特殊类型的插槽，用作使用一个 (能够传递数据到) 可重用模板替换已渲染元素。</p>
+<p>作用域插槽是一种特殊类型的插槽，用作一个替换已渲染元素的 (能被传递数据的) 可重用模板。</p>
 <p>在子组件中，只需将数据传递到插槽，就像你将 props 传递给组件一样：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">slot</span> <span class="attr">text</span>=<span class="string">"hello from child"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在父级中，具有特殊属性 <code>scope</code> 的 <code>&lt;template&gt;</code> 元素必须存在，表示它是作用域插槽的模板。<code>scope</code> 的值对应一个临时变量名，此变量接收从子组件中传递的 props 对象：</p>
