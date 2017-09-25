@@ -85,9 +85,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link">教程</a></li>
-<li><a href="/v2/api/" class="nav-link current">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link current">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -118,6 +126,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -130,10 +152,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
   </ul>
 </div>
@@ -150,9 +169,17 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link">教程</a></li>
-<li><a href="/v2/api/" class="nav-link current">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link current">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -183,6 +210,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -195,10 +236,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
     </ul>
     <div class="list">
@@ -454,7 +492,7 @@
 </li>
 <li><p><strong>用法</strong>：</p>
 <p>注册或获取全局指令。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 注册</span></div><div class="line">Vue.directive(<span class="string">'my-directive'</span>, &#123;</div><div class="line">  <span class="attr">bind</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">componentUpdated</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">unbind</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 注册 (传入一个简单的指令函数)</span></div><div class="line">Vue.directive(<span class="string">'my-directive'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 这里将会被 `bind` 和 `update` 调用</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// getter，返回已注册的指令</span></div><div class="line"><span class="keyword">var</span> myDirective = Vue.directive(<span class="string">'my-directive'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 注册</span></div><div class="line">Vue.directive(<span class="string">'my-directive'</span>, &#123;</div><div class="line">  <span class="attr">bind</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">componentUpdated</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  <span class="attr">unbind</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 注册 (指令函数)</span></div><div class="line">Vue.directive(<span class="string">'my-directive'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 这里将会被 `bind` 和 `update` 调用</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// getter，返回已注册的指令</span></div><div class="line"><span class="keyword">var</span> myDirective = Vue.directive(<span class="string">'my-directive'</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/custom-directive.html">自定义指令</a></p>
 </li>
@@ -568,7 +606,7 @@
 <p>props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。</p>
 </li>
 <li><p><strong>示例</strong>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 简单语法</span></div><div class="line">Vue.component(<span class="string">'props-demo-simple'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: [<span class="string">'size'</span>, <span class="string">'myMessage'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 对象语法，提供校验</span></div><div class="line">Vue.component(<span class="string">'props-demo-advanced'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="comment">// 只检测类型</span></div><div class="line">    height: <span class="built_in">Number</span>,</div><div class="line">    <span class="comment">// 检测类型 + 其他验证</span></div><div class="line">    age: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">validator</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> value &gt;= <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 简单语法</span></div><div class="line">Vue.component(<span class="string">'props-demo-simple'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: [<span class="string">'size'</span>, <span class="string">'myMessage'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 对象语法，提供校验</span></div><div class="line">Vue.component(<span class="string">'props-demo-advanced'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="comment">// 检测类型</span></div><div class="line">    height: <span class="built_in">Number</span>,</div><div class="line">    <span class="comment">// 检测类型 + 其他验证</span></div><div class="line">    age: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">      <span class="attr">default</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">validator</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> value &gt;= <span class="number">0</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/components.html#Props">Props</a></p>
 </li>
@@ -597,7 +635,7 @@
 <p>计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。注意，如果实例范畴之外的依赖 (比如非响应式的 not reactive) 是<strong>不会</strong>触发计算属性更新的。</p>
 </li>
 <li><p><strong>示例</strong>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    <span class="comment">// 仅读取，值只须为函数</span></div><div class="line">    aDouble: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.a * <span class="number">2</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 读取和设置</span></div><div class="line">    aPlus: &#123;</div><div class="line">      <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.a = v - <span class="number">1</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.aPlus   <span class="comment">// =&gt; 2</span></div><div class="line">vm.aPlus = <span class="number">3</span></div><div class="line">vm.a       <span class="comment">// =&gt; 2</span></div><div class="line">vm.aDouble <span class="comment">// =&gt; 4</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    <span class="comment">// 仅读取</span></div><div class="line">    aDouble: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.a * <span class="number">2</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 读取和设置</span></div><div class="line">    aPlus: &#123;</div><div class="line">      <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.a = v - <span class="number">1</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.aPlus   <span class="comment">// =&gt; 2</span></div><div class="line">vm.aPlus = <span class="number">3</span></div><div class="line">vm.a       <span class="comment">// =&gt; 2</span></div><div class="line">vm.aDouble <span class="comment">// =&gt; 4</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/computed.html">计算属性</a></p>
 </li>
@@ -656,7 +694,7 @@
 <p>如果值以 <code>#</code> 开始，则它用作选项符，将使用匹配元素的 innerHTML 作为模板。常用的技巧是用 <code>&lt;script type=&quot;x-template&quot;&gt;</code> 包含模板。</p>
 <p class="tip">出于安全考虑，您应该只使用您信任的 Vue 模板。避免使用其他人生成的内容作为您的模板。</p>
 
-<p class="tip">如果 Vue 选项中包含 <code>render</code> 函数，template 选项将被忽略。</p>
+<p class="tip">如果 Vue 选项中包含渲染函数，该模板将被忽略。</p>
 </li>
 <li><p><strong>参考</strong>：</p>
 <ul>
@@ -669,9 +707,9 @@
 <li><p><strong>类型</strong>：<code>(createElement: () =&gt; VNode) =&gt; VNode</code></p>
 </li>
 <li><p><strong>详细</strong>：</p>
-<p>字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。<code>render</code> 函数接收一个 <code>createElement</code> 方法作为第一个参数用来创建 <code>VNode</code>。</p>
+<p>字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 <code>createElement</code> 方法作为第一个参数用来创建 <code>VNode</code>。</p>
 <p>如果组件是一个函数组件，渲染函数还会接收一个额外的 <code>context</code> 参数，为没有实例的函数组件提供上下文信息。</p>
-<p class="tip">Vue 选项中的 <code>render</code> 函数若存在，则 Vue 构造函数不会从 <code>template</code> 选项或通过 <code>el</code> 选项指定的挂载元素中提取出的 HTML 模板编译 <code>render</code> 函数。</p>
+<p class="tip">Vue 选项中的 <code>render</code> 函数若存在，则 Vue 构造函数不会从 <code>template</code> 选项或通过 <code>el</code> 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。</p>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/render-function.html">渲染函数</a></p>
 </li>
@@ -707,7 +745,7 @@
 <li><p><strong>类型</strong>：<code>Function</code></p>
 </li>
 <li><p><strong>详细</strong>：</p>
-<p>实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，<code>$el</code> 属性目前不可见。</p>
+<p>在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，<code>$el</code> 属性目前不可见。</p>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/instance.html#生命周期图示">生命周期图示</a></p>
 </li>
@@ -1073,7 +1111,7 @@
 </li>
 <li><p><strong>详细</strong>：</p>
 <p>用来访问<a href="../guide/components.html#作用域插槽">作用域插槽</a>。对于包括 <code>默认 slot</code> 在内的每一个插槽，该对象都包含一个返回相应 VNode 的函数。</p>
-<p>在使用 <a href="../guide/render-function.html"><code>render</code> 函数</a> 书写一个组件时，访问 <code>vm.$scopedSlots</code> 最有帮助。</p>
+<p><code>vm.$scopedSlots</code> 在使用<a href="../guide/render-function.html">渲染函数</a>开发一个组件时特别有用。</p>
 </li>
 <li><p><strong>参考</strong>：</p>
 <ul>
@@ -1089,7 +1127,7 @@
 <li><p><strong>只读</strong></p>
 </li>
 <li><p><strong>详细</strong>：</p>
-<p>一个对象，其中包含了所有拥有 <code>ref</code> 注册的子组件。</p>
+<p>一个对象，持有已注册过 <code>ref</code> 的所有子组件。</p>
 </li>
 <li><p><strong>参考</strong>：</p>
 <ul>
@@ -1460,7 +1498,7 @@
 </li>
 <li><p><strong>修饰符</strong>：</p>
 <ul>
-<li><code>.prop</code> - 被用于绑定 DOM 属性 (property)。(<a href="https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html#answer-6004028" target="_blank" rel="external">差别在那里？</a>)</li>
+<li><code>.prop</code> - 被用于绑定 DOM 属性 (property)。(<a href="https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html#answer-6004028" target="_blank" rel="external">差别在哪里？</a>)</li>
 <li><code>.camel</code> - (2.1.0+) 将 kebab-case 特性名转换为 camelCase. (从 2.1.0 开始支持)</li>
 <li><code>.sync</code> (2.3.0+) 语法糖，会扩展成一个更新父组件绑定值的 <code>v-on</code> 侦听器。</li>
 </ul>
@@ -1647,7 +1685,7 @@
 </ul>
 </li>
 <li><p><strong>用法</strong>：</p>
-<p><code>&lt;transition&gt;</code> 元素作为单个元素/组件的过渡效果。<code>&lt;transition&gt;</code> 不会渲染额外的 DOM 元素，也不会出现在检测过的组件层级中。它只是将内容包裹在其中，简单的运用过渡行为。</p>
+<p><code>&lt;transition&gt;</code> 元素作为单个元素/组件的过渡效果。<code>&lt;transition&gt;</code> 只会把过渡效果应用到其包裹的内容上，而不会额外渲染 DOM 元素，也不会出现在检测过的组件层级中。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 简单元素 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>toggled content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 动态组件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span> <span class="attr">mode</span>=<span class="string">"out-in"</span> <span class="attr">appear</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 事件钩子 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"transition-demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">transition</span> @<span class="attr">after-enter</span>=<span class="string">"transitionComplete"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>toggled content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  ...</div><div class="line">  methods: &#123;</div><div class="line">    <span class="attr">transitionComplete</span>: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">      <span class="comment">// 传入 'el' 这个 DOM 元素作为参数。</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">&#125;).$mount(<span class="string">'#transition-demo'</span>)</div></pre></td></tr></table></figure>
 </li>

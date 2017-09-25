@@ -85,9 +85,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -118,6 +126,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -130,10 +152,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
   </ul>
 </div>
@@ -150,9 +169,17 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -183,6 +210,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -195,10 +236,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
     </ul>
     <div class="list">
@@ -817,7 +855,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> createElement(<span class="string">'h1'</span>, <span class="keyword">this</span>.blogTitle)</div></pre></td></tr></table></figure>
 <p><code>createElement</code> 到底会返回什么呢？其实不是一个<em>实际的</em> DOM 元素。它更准确的名字可能是 <code>createNodeDescription</code>，因为它所包含的信息会告诉 Vue 页面上需要渲染什么样的节点，及其子节点。我们把这样的节点描述为“虚拟节点 (Virtual DOM)”，也常简写它为“VNode”。“虚拟 DOM”是我们对由 Vue 组件树建立起来的整个 VNode 树的称呼。</p>
 <h2 id="createElement-参数"><a href="#createElement-参数" class="headerlink" title="createElement 参数"></a><code>createElement</code> 参数</h2><p>接下来你需要熟悉的是如何在 <code>createElement</code> 函数中生成模板。这里是 <code>createElement</code> 接受的参数：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// @returns &#123;VNode&#125;</span></div><div class="line">createElement(</div><div class="line">  <span class="comment">// &#123;String | Object | Function&#125;</span></div><div class="line">  <span class="comment">// 一个 HTML 标签字符串，组件选项对象，或者一个返回值类型为 String/Object 的函数，必要参数</span></div><div class="line">  <span class="string">'div'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;Object&#125;</span></div><div class="line">  <span class="comment">// 一个包含模板相关属性的数据对象</span></div><div class="line">  <span class="comment">// 这样，您可以在 template 中使用这些属性。可选参数。</span></div><div class="line">  &#123;</div><div class="line">    <span class="comment">// (详情见下一节)</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;String | Array&#125;</span></div><div class="line">  <span class="comment">// 子节点 (VNodes)，由 `createElement()` 构建而成，</span></div><div class="line">  <span class="comment">// 或简单的使用字符串来生成“文本节点”。可选参数。</span></div><div class="line">  [</div><div class="line">    <span class="string">'先写一些文字'</span>,</div><div class="line">    createElement(<span class="string">'h1'</span>, <span class="string">'一则头条'</span>),</div><div class="line">    createElement(MyComponent, &#123;</div><div class="line">      <span class="attr">props</span>: &#123;</div><div class="line">        <span class="attr">someProp</span>: <span class="string">'foobar'</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// @returns &#123;VNode&#125;</span></div><div class="line">createElement(</div><div class="line">  <span class="comment">// &#123;String | Object | Function&#125;</span></div><div class="line">  <span class="comment">// 一个 HTML 标签字符串，组件选项对象，或者一个返回值类型为 String/Object 的函数，必要参数</span></div><div class="line">  <span class="string">'div'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;Object&#125;</span></div><div class="line">  <span class="comment">// 一个包含模板相关属性的数据对象</span></div><div class="line">  <span class="comment">// 这样，您可以在 template 中使用这些属性。可选参数。</span></div><div class="line">  &#123;</div><div class="line">    <span class="comment">// (详情见下一节)</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;String | Array&#125;</span></div><div class="line">  <span class="comment">// 子节点 (VNodes)，由 `createElement()` 构建而成，</span></div><div class="line">  <span class="comment">// 或使用字符串来生成“文本节点”。可选参数。</span></div><div class="line">  [</div><div class="line">    <span class="string">'先写一些文字'</span>,</div><div class="line">    createElement(<span class="string">'h1'</span>, <span class="string">'一则头条'</span>),</div><div class="line">    createElement(MyComponent, &#123;</div><div class="line">      <span class="attr">props</span>: &#123;</div><div class="line">        <span class="attr">someProp</span>: <span class="string">'foobar'</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">)</div></pre></td></tr></table></figure>
 <h3 id="深入-data-对象"><a href="#深入-data-对象" class="headerlink" title="深入 data 对象"></a>深入 data 对象</h3><p>有一件事要注意：正如在模板语法中，<code>v-bind:class</code> 和 <code>v-bind:style</code> ，会被特别对待一样，在 VNode 数据对象中，下列属性名是级别最高的字段。该对象也允许你绑定普通的 HTML 特性，就像 DOM 属性一样，比如 <code>innerHTML</code> (这会取代 <code>v-html</code> 指令)。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// 和`v-bind:class`一样的 API</span></div><div class="line">  <span class="string">'class'</span>: &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 和`v-bind:style`一样的 API</span></div><div class="line">  style: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="string">'14px'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 正常的 HTML 特性</span></div><div class="line">  attrs: &#123;</div><div class="line">    <span class="attr">id</span>: <span class="string">'foo'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 组件 props</span></div><div class="line">  props: &#123;</div><div class="line">    <span class="attr">myProp</span>: <span class="string">'bar'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// DOM 属性</span></div><div class="line">  domProps: &#123;</div><div class="line">    <span class="attr">innerHTML</span>: <span class="string">'baz'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 事件监听器基于 `on`</span></div><div class="line">  <span class="comment">// 所以不再支持如 `v-on:keyup.enter` 修饰器</span></div><div class="line">  <span class="comment">// 需要手动匹配 keyCode。</span></div><div class="line">  on: &#123;</div><div class="line">    <span class="attr">click</span>: <span class="keyword">this</span>.clickHandler</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 仅对于组件，用于监听原生事件，而不是组件内部使用 `vm.$emit` 触发的事件。</span></div><div class="line">  nativeOn: &#123;</div><div class="line">    <span class="attr">click</span>: <span class="keyword">this</span>.nativeClickHandler</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 自定义指令。注意事项：不能对绑定的旧值设值</span></div><div class="line">  <span class="comment">// Vue 会为您持续追踪</span></div><div class="line">  directives: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'my-custom-directive'</span>,</div><div class="line">      <span class="attr">value</span>: <span class="string">'2'</span>,</div><div class="line">      <span class="attr">expression</span>: <span class="string">'1 + 1'</span>,</div><div class="line">      <span class="attr">arg</span>: <span class="string">'foo'</span>,</div><div class="line">      <span class="attr">modifiers</span>: &#123;</div><div class="line">        <span class="attr">bar</span>: <span class="literal">true</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  <span class="comment">// Scoped slots in the form of</span></div><div class="line">  <span class="comment">// &#123; name: props =&gt; VNode | Array&lt;VNode&gt; &#125;</span></div><div class="line">  scopedSlots: &#123;</div><div class="line">    <span class="attr">default</span>: <span class="function"><span class="params">props</span> =&gt;</span> createElement(<span class="string">'span'</span>, props.text)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 如果组件是其他组件的子组件，需为插槽指定名称</span></div><div class="line">  slot: <span class="string">'name-of-slot'</span>,</div><div class="line">  <span class="comment">// 其他特殊顶层属性</span></div><div class="line">  key: <span class="string">'myKey'</span>,</div><div class="line">  <span class="attr">ref</span>: <span class="string">'myRef'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><p>有了这些知识，我们现在可以完成我们最开始想实现的组件：</p>
@@ -862,7 +900,7 @@
 </table>
 <p>例如:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">on: &#123;</div><div class="line">  <span class="string">'!click'</span>: <span class="keyword">this</span>.doThisInCapturingMode,</div><div class="line">  <span class="string">'~keyup'</span>: <span class="keyword">this</span>.doThisOnce,</div><div class="line">  <span class="string">`~!mouseover`</span>: <span class="keyword">this</span>.doThisOnceInCapturingMode</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对于其他的修饰符，前缀不是很重要，因为你可以直接在事件处理函数中使用事件方法：</p>
+<p>对于其他的修饰符，前缀不是很重要，因为你可以在事件处理函数中使用事件方法：</p>
 <table>
 <thead>
 <tr>

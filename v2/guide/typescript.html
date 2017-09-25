@@ -85,9 +85,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -118,6 +126,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -130,10 +152,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
   </ul>
 </div>
@@ -150,9 +169,17 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">教程</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">示例</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学习</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">教程</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">示例</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">生态系统</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -183,6 +210,20 @@
   </ul>
 </li>
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">团队</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">支持 Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">商店</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">在 OpenCollective 支持我们</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">在 Patreon 支持 Evan</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -195,10 +236,7 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">商店</a>
-</li>
-<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link">参与贡献</a></li>
+<li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
     </ul>
     <div class="list">
@@ -793,8 +831,8 @@
   
   <h2 id="从-2-2-0-起针对-TS-Webpack-2-用户的重要改动"><a href="#从-2-2-0-起针对-TS-Webpack-2-用户的重要改动" class="headerlink" title="从 2.2.0 起针对 TS + Webpack 2 用户的重要改动"></a>从 2.2.0 起针对 TS + Webpack 2 用户的重要改动</h2><p>在 Vue 2.2 里，我们引入了新机制，把 dist 文件都作为 ES 模块发布。这在 webpack 2 中属于默认行为。遗憾的是，这个改动会引入一个会破坏兼容性的意外改动。在 TypeScript + webpack 2 里，<code>import Vue = require(&#39;vue&#39;)</code> 现在会返回一个综合的 ES 模块对象，而不是 Vue 对象本身了。</p>
 <p>我们计划在未来把所有的官方类型声明都改成 ES-风格的导出方式 (译注：<code>export</code>)。请参阅下面的<a href="#推荐配置">推荐配置</a>板块，配置一个不易过时的编码方案。</p>
-<h2 id="发布为-NPM-包的官方声明文件"><a href="#发布为-NPM-包的官方声明文件" class="headerlink" title="发布为 NPM 包的官方声明文件"></a>发布为 NPM 包的官方声明文件</h2><p>静态类型系统能帮助你有效防止 N 多潜在的运行时错误，而且随着你的应用日渐丰满会更加显著。这就是为什么 Vue 不仅仅为 Vue core 提供了针对 <a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a> 的<a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="external">官方类型声明</a>，还为 <a href="https://github.com/vuejs/vue-router/tree/dev/types" target="_blank" rel="external">Vue Router</a> 和 <a href="https://github.com/vuejs/vuex/tree/dev/types" target="_blank" rel="external">Vuex</a> 也提供了相应的声明文件。</p>
-<p>而且，我们已经把他们<a href="https://unpkg.com/vue/types/" target="_blank" rel="external">发布于 NPM</a>，最新版本的 TypeScript 也知道该如何自己从 NPM 包里解析类型声明。这意味着只要你成功地通过 NPM 安装了，就不再需要任何额外的工具辅助，即可在 Vue 中使用 TypeScript 了。</p>
+<h2 id="发布为-NPM-包的官方声明文件"><a href="#发布为-NPM-包的官方声明文件" class="headerlink" title="发布为 NPM 包的官方声明文件"></a>发布为 NPM 包的官方声明文件</h2><p>静态类型系统能帮助你有效防止许多潜在的运行时错误，而且随着你的应用日渐丰满会更加显著。这就是为什么 Vue 不仅仅为 Vue core 提供了针对 <a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a> 的<a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="external">官方类型声明</a>，还为 <a href="https://github.com/vuejs/vue-router/tree/dev/types" target="_blank" rel="external">Vue Router</a> 和 <a href="https://github.com/vuejs/vuex/tree/dev/types" target="_blank" rel="external">Vuex</a> 也提供了相应的声明文件。</p>
+<p>而且，我们已经把它们<a href="https://cdn.jsdelivr.net/npm/vue/types/" target="_blank" rel="external">发布到了 NPM</a>，最新版本的 TypeScript 也知道该如何自己从 NPM 包里解析类型声明。这意味着只要你成功地通过 NPM 安装了，就不再需要任何额外的工具辅助，即可在 Vue 中使用 TypeScript 了。</p>
 <h2 id="推荐配置"><a href="#推荐配置" class="headerlink" title="推荐配置"></a>推荐配置</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// tsconfig.json</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"compilerOptions"</span>: &#123;</div><div class="line">    <span class="comment">// ... 已省略其它选项</span></div><div class="line">    <span class="string">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"lib"</span>: [</div><div class="line">      <span class="string">"dom"</span>,</div><div class="line">      <span class="string">"es5"</span>,</div><div class="line">      <span class="string">"es2015.promise"</span></div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>请注意 <code>allowSyntheticDefaultImports</code> 选项允许你使用下列语法：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div></pre></td></tr></table></figure>
