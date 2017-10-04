@@ -255,11 +255,11 @@ a.button.white {
 }
 .highlight {
   overflow-x: auto;
-  padding: 0;
   background-color: #f8f8f8;
-  padding: 0.8em 0.8em 0.4em;
+  padding: 0.4em 0 0;
   line-height: 1.1em;
   border-radius: 2px;
+  position: relative;
 }
 .highlight table,
 .highlight tr,
@@ -285,7 +285,7 @@ a.button.white {
 .highlight.bash .code:before,
 .highlight.css .code:before {
   position: absolute;
-  margin-top: -1em;
+  top: 0;
   right: 0;
   color: #ccc;
   text-align: right;
@@ -387,6 +387,12 @@ a.button.white {
   border-right: 4px solid transparent;
   border-top: 5px solid #ccc;
 }
+sup.beta.beta {
+  font-size: 0.6em;
+  margin-left: 0.7em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
 #header {
   background-color: #fff;
   height: 40px;
@@ -420,22 +426,11 @@ body.docs #nav {
   position: relative;
   margin: 0 0.6em;
 }
-.nav-link {
-  padding-bottom: 3px;
-}
-.nav-link:hover,
-.nav-link.current {
-  border-bottom: 3px solid #42b983;
-}
-.nav-link.team,
-.nav-link.contribute {
-  margin-left: 10px;
-}
-.nav-dropdown .nav-link:hover,
-.nav-dropdown .nav-link.current {
+#nav .nav-dropdown .nav-link:hover,
+#nav .nav-dropdown .nav-link.current {
   border-bottom: none;
 }
-.nav-dropdown .nav-link.current::after {
+#nav .nav-dropdown .nav-link.current::after {
   content: "";
   width: 0;
   height: 0;
@@ -446,6 +441,17 @@ body.docs #nav {
   top: 50%;
   margin-top: -4px;
   left: 8px;
+}
+.nav-link {
+  padding-bottom: 3px;
+}
+.nav-link:hover,
+.nav-link.current {
+  border-bottom: 3px solid #42b983;
+}
+.nav-link.team,
+.nav-link.contribute {
+  margin-left: 10px;
 }
 .new-label {
   position: absolute;
@@ -712,9 +718,6 @@ body.docs #nav {
   width: auto;
   max-width: 100px;
   max-height: 60px;
-}
-#sponsors .open-collective-sponsors img {
-  border-radius: 50%;
 }
 #sponsors .open-collective-sponsors h4 {
   color: #999;
