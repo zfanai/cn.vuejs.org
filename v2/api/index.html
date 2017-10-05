@@ -444,7 +444,7 @@
 <p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 修改数据</span></div><div class="line">vm.msg = <span class="string">'Hello'</span></div><div class="line"><span class="comment">// DOM 还没有更新</span></div><div class="line">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// DOM 更新了</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
-<p>2.1.0 起新增：如果没有提供回调且支持 promise 的环境中返回 promise。</p>
+<p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自行 polyfill。</p>
 </blockquote>
 </li>
 </ul>
@@ -1343,7 +1343,7 @@
 <li><p><strong>用法</strong>：</p>
 <p>将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 <code>Vue.nextTick</code> 一样，不同的是回调的 <code>this</code> 自动绑定到调用它的实例上。</p>
 <blockquote>
-<p>2.1.0 新增：如果没有提供回调且支持 Promise 的环境中返回 Promise。</p>
+<p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不是原生支持 Promise (IE：你们都看我干嘛)，你得自行 polyfill。</p>
 </blockquote>
 </li>
 <li><p><strong>示例</strong>：</p>
