@@ -418,8 +418,8 @@
 </summary>
 
 <p>Vue 使用 <code>_</code> 前缀来定义其自身的私有属性，所以使用相同的前缀 (比如 <code>_update</code>) 有覆写实例属性的风险。即便你检查确认 Vue 当前版本没有用到这个属性名，也不能保证和将来的版本没有冲突。</p>
-<p>对于 <code>&amp;</code> 前缀来说，其在 Vue 生态系统中的目的是暴露给用户的一个特殊的实例属性，所以把它用于<em>私有</em>属性并不合适。</p>
-<p>不过，我们推荐把这两个前缀结合为 <code>&amp;_</code>，作为一个用户定义的私有属性的约定，以确保不会和 Vue 自身相冲突。</p>
+<p>对于 <code>$</code> 前缀来说，其在 Vue 生态系统中的目的是暴露给用户的一个特殊的实例属性，所以把它用于<em>私有</em>属性并不合适。</p>
+<p>不过，我们推荐把这两个前缀结合为 <code>$_</code>，作为一个用户定义的私有属性的约定，以确保不会和 Vue 自身相冲突。</p>
 </details>
 <div class="style-example example-bad">
 <h4 id="反例-5"><a href="#反例-5" class="headerlink" title="反例"></a>反例</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myGreatMixin = &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    <span class="attr">update</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -456,14 +456,14 @@
   <h4>详解</h4>
 </summary>
 
-<p>这些组件为你的应用铺设了一致的基础样式和行为。它们可能<strong>只</strong>包括：</p>
+<p>这些组件为你的应用奠定了一致的基础样式和行为。它们可能<strong>只</strong>包括：</p>
 <ul>
 <li>HTML 元素</li>
-<li>其它带 <code>Base</code> 前缀带组件</li>
+<li>其它带 <code>Base</code> 前缀的组件</li>
 <li>第三方 UI 组件库</li>
 </ul>
 <p>但是它们<strong>绝不会</strong>包括全局状态 (比如来自 Vuex store)。</p>
-<p>它们的名字经常包含它们所包裹的元素的名字 (比如 <code>BaseButton</code>、<code>BaseTable</code>)，除非并没有这个特定目的现成的元素 (比如 <code>BaseIcon</code>)。如果你为特定的上下文构建类似的组件，那它们几乎总会消费这些组件 (比如 <code>BaseButton</code> 可能会用在 <code>ButtonSubmit</code> 上)。</p>
+<p>它们的名字通常包含所包裹元素的名字 (比如 <code>BaseButton</code>、<code>BaseTable</code>)，除非没有现成的对应功能的元素 (比如 <code>BaseIcon</code>)。如果你为特定的上下文构建类似的组件，那它们几乎总会消费这些组件 (比如 <code>BaseButton</code> 可能会用在 <code>ButtonSubmit</code> 上)。</p>
 <p>这样做的几个好处：</p>
 <ul>
 <li><p>当你在编辑器中以字母顺序排序时，你的应用的基础组件会全部列在一起，这样更容易识别。</p>
@@ -620,33 +620,33 @@
 <h4 id="好例子-17"><a href="#好例子-17" class="headerlink" title="好例子"></a>好例子</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span></span></div><div class="line">  <span class="attr">src</span>=<span class="string">"https://vuejs.org/images/logo.png"</span></div><div class="line">  <span class="attr">alt</span>=<span class="string">"Vue Logo"</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">MyComponent</span></span></div><div class="line">  <span class="attr">foo</span>=<span class="string">"a"</span></div><div class="line">  <span class="attr">bar</span>=<span class="string">"b"</span></div><div class="line">  <span class="attr">baz</span>=<span class="string">"c"</span></div><div class="line">/&gt;</div></pre></td></tr></table></figure>
 </div>
-<h3 id="Complex-expressions-in-templates-强烈推荐"><a href="#Complex-expressions-in-templates-强烈推荐" class="headerlink" title="Complex expressions in templates 强烈推荐"></a>Complex expressions in templates <sup data-p="b">强烈推荐</sup></h3><p><strong>Component templates should only include simple expressions, with more complex expressions refactored into computed properties or methods.</strong></p>
-<p>Complex expressions in your templates make them less declarative. We should strive to describe <em>what</em> should appear, not <em>how</em> we’re computing that value. Computed properties and methods also allow the code to be reused.</p>
+<h3 id="避免模板中的复杂表达式-强烈推荐"><a href="#避免模板中的复杂表达式-强烈推荐" class="headerlink" title="避免模板中的复杂表达式 强烈推荐"></a>避免模板中的复杂表达式 <sup data-p="b">强烈推荐</sup></h3><p><strong>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。</strong></p>
+<p>复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的<em>是什么</em>，而非<em>如何</em>计算那个值。而且计算属性和方法使得代码可以重用。</p>
 <div class="style-example example-bad">
 <h4 id="反例-18"><a href="#反例-18" class="headerlink" title="反例"></a>反例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123;</div><div class="line">  fullName.split(' ').map(function (word) &#123;</div><div class="line">    return word[0].toUpperCase() + word.slice(1)</div><div class="line">  &#125;).join(' ')</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
 </div>
 <div class="style-example example-good">
-<h4 id="好例子-18"><a href="#好例子-18" class="headerlink" title="好例子"></a>好例子</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- In a template --&gt;</span></div><div class="line">&#123;&#123; normalizedFullName &#125;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// The complex expression has been moved to a computed property</span></div><div class="line">computed: &#123;</div><div class="line">  <span class="attr">normalizedFullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fullName.split(<span class="string">' '</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> word[<span class="number">0</span>].toUpperCase() + word.slice(<span class="number">1</span>)</div><div class="line">    &#125;).join(<span class="string">' '</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="好例子-18"><a href="#好例子-18" class="headerlink" title="好例子"></a>好例子</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 在模板中 --&gt;</span></div><div class="line">&#123;&#123; normalizedFullName &#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 复杂表达式已经移入一个计算属性</span></div><div class="line">computed: &#123;</div><div class="line">  <span class="attr">normalizedFullName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fullName.split(<span class="string">' '</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> word[<span class="number">0</span>].toUpperCase() + word.slice(<span class="number">1</span>)</div><div class="line">    &#125;).join(<span class="string">' '</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </div>
-<h3 id="Complex-computed-properties-强烈推荐"><a href="#Complex-computed-properties-强烈推荐" class="headerlink" title="Complex computed properties 强烈推荐"></a>Complex computed properties <sup data-p="b">强烈推荐</sup></h3><p><strong>Complex computed properties should be split into as many simpler properties as possible.</strong></p>
+<h3 id="避免复杂计算属性-强烈推荐"><a href="#避免复杂计算属性-强烈推荐" class="headerlink" title="避免复杂计算属性 强烈推荐"></a>避免复杂计算属性 <sup data-p="b">强烈推荐</sup></h3><p><strong>应该把复杂计算属性分割为尽可能多的更简单的属性。</strong></p>
 
 <details>
 <summary>
   <h4>详解</h4>
 </summary>
 
-<p>Simpler, well-named computed properties are:</p>
+<p>更简单、命名得当的计算属性是这样的：</p>
 <ul>
-<li><p><strong>Easier to test</strong></p>
-<p>When each computed property contains only a very simple expression, with very few dependencies, it’s much easier to write tests confirming that it works correctly.</p>
+<li><p><strong>易于测试</strong></p>
+<p>当每个计算属性都包含一个非常简单且很少依赖的表达式时，撰写测试以确保其正确工作就会更加容易。</p>
 </li>
-<li><p><strong>Easier to read</strong></p>
-<p>Simplifying computed properties forces you to give each value a descriptive name, even if it’s not reused. This makes it much easier for other developers (and future you) to focus in on the code they care about and figure out what’s going on.</p>
+<li><p><strong>易于阅读</strong></p>
+<p>简化计算属性要求你为每一个值都起一个描述性的名称，即便它不可复用。这使得其他开发者 (以及未来的你) 更容易专注在他们关心的代码上并搞清楚发生了什么。</p>
 </li>
-<li><p><strong>More adaptable to changing requirements</strong></p>
-<p>Any value that can be named might be useful to the view. For example, we might decide to display a message telling the user how much money they saved. We might also decide to calculate sales tax, but perhaps display it separately, rather than as part of the final price.</p>
-<p>Small, focused computed properties make fewer assumptions about how information will be used, so require less refactoring as requirements change.</p>
+<li><p><strong>更好的“拥抱变化”</strong></p>
+<p>任何能够命名的值都可能用在视图上。举个例子，我们可能打算展示一个信息，告诉用户他们存了多少钱；也可能打算计算税费，但是可能会分开展现，而不是作为总价的一部分。</p>
+<p>小的、专注的计算属性减少了信息使用时的假设性限制，所以需求变更时也用不着那么多重构了。</p>
 </li>
 </ul>
 </details>
@@ -656,8 +656,8 @@
 <div class="style-example example-good">
 <h4 id="好例子-19"><a href="#好例子-19" class="headerlink" title="好例子"></a>好例子</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  <span class="attr">basePrice</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.manufactureCost / (<span class="number">1</span> - <span class="keyword">this</span>.profitMargin)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">discount</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basePrice * (<span class="keyword">this</span>.discountPercent || <span class="number">0</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">finalPrice</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.basePrice - <span class="keyword">this</span>.discount</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </div>
-<h3 id="Quoted-attribute-values-强烈推荐"><a href="#Quoted-attribute-values-强烈推荐" class="headerlink" title="Quoted attribute values 强烈推荐"></a>Quoted attribute values <sup data-p="b">强烈推荐</sup></h3><p><strong>Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).</strong></p>
-<p>While attribute values without any spaces are not required to have quotes in HTML, this practice often leads to <em>avoiding</em> spaces, making attribute values less readable.</p>
+<h3 id="带引号的特性值-强烈推荐"><a href="#带引号的特性值-强烈推荐" class="headerlink" title="带引号的特性值 强烈推荐"></a>带引号的特性值 <sup data-p="b">强烈推荐</sup></h3><p><strong>非空 HTML 特性值应该始终带引号 (单引号或双引号，选你 JS 里不用的那个)。</strong></p>
+<p>在 HTML 中不带空格的特性值是可以没有引号的，但这样做常常导致<em>回避</em>带空格的特征值，让其可读性变差。</p>
 <div class="style-example example-bad">
 <h4 id="反例-20"><a href="#反例-20" class="headerlink" title="反例"></a>反例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">text</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">AppSidebar</span> <span class="attr">:style</span>=<span class="string">&#123;width:sidebarWidth+</span>'<span class="attr">px</span>'&#125;&gt;</span></div></pre></td></tr></table></figure>
@@ -666,7 +666,7 @@
 <h4 id="好例子-20"><a href="#好例子-20" class="headerlink" title="好例子"></a>好例子</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">AppSidebar</span> <span class="attr">:style</span>=<span class="string">"&#123; width: sidebarWidth + 'px' &#125;"</span>&gt;</span></div></pre></td></tr></table></figure>
 </div>
-<h3 id="Directive-shorthands-强烈推荐"><a href="#Directive-shorthands-强烈推荐" class="headerlink" title="Directive shorthands 强烈推荐"></a>Directive shorthands <sup data-p="b">强烈推荐</sup></h3><p><strong>Directive shorthands (<code>:</code> for <code>v-bind:</code> and <code>@</code> for <code>v-on:</code>) should be used always or never.</strong></p>
+<h3 id="指令缩写-强烈推荐"><a href="#指令缩写-强烈推荐" class="headerlink" title="指令缩写 强烈推荐"></a>指令缩写 <sup data-p="b">强烈推荐</sup></h3><p><strong>指令缩写 (用 <code>:</code> 表示 <code>v-bind:</code> 和用 <code>@</code> 表示 <code>v-on:</code>) 应该要么都用要么都不用。</strong></p>
 <div class="style-example example-bad">
 <h4 id="反例-21"><a href="#反例-21" class="headerlink" title="反例"></a>反例</h4><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line">  <span class="attr">v-bind:value</span>=<span class="string">"newTodoText"</span></div><div class="line">  <span class="attr">:placeholder</span>=<span class="string">"newTodoInstructions"</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line">  <span class="attr">v-on:input</span>=<span class="string">"onInput"</span></div><div class="line">  @<span class="attr">focus</span>=<span class="string">"onFocus"</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
