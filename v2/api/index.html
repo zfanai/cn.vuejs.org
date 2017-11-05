@@ -460,7 +460,7 @@
 <p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 修改数据</span></div><div class="line">vm.msg = <span class="string">'Hello'</span></div><div class="line"><span class="comment">// DOM 还没有更新</span></div><div class="line">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// DOM 更新了</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
-<p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自行 polyfill。</p>
+<p>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自己提供 polyfill。</p>
 </blockquote>
 </li>
 </ul>
@@ -499,7 +499,7 @@
 <blockquote>
 <p>在 2.2.0+ 中同样支持在数组上工作。</p>
 </blockquote>
-<p class="tip">目标对象不能是一个 Vue 示例或 Vue 示例的根数据对象。</p>
+<p class="tip">目标对象不能是一个 Vue 实例或 Vue 实例的根数据对象。</p>
 
 </li>
 </ul>
@@ -713,7 +713,7 @@
 </li>
 <li><p><strong>详细</strong>：</p>
 <p>一个字符串模板作为 Vue 实例的标识使用。模板将会 <strong>替换</strong> 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。</p>
-<p>如果值以 <code>#</code> 开始，则它用作选项符，将使用匹配元素的 innerHTML 作为模板。常用的技巧是用 <code>&lt;script type=&quot;x-template&quot;&gt;</code> 包含模板。</p>
+<p>如果值以 <code>#</code> 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。常用的技巧是用 <code>&lt;script type=&quot;x-template&quot;&gt;</code> 包含模板。</p>
 <p class="tip">出于安全考虑，你应该只使用你信任的 Vue 模板。避免使用其他人生成的内容作为你的模板。</p>
 
 <p class="tip">如果 Vue 选项中包含渲染函数，该模板将被忽略。</p>

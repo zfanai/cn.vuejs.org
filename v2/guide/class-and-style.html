@@ -854,7 +854,7 @@
   <p>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 <code>v-bind</code> 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且易错。因此，在将 <code>v-bind</code> 用于 <code>class</code> 和 <code>style</code> 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。</p>
 <h2 id="绑定-HTML-Class"><a href="#绑定-HTML-Class" class="headerlink" title="绑定 HTML Class"></a>绑定 HTML Class</h2><h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>我们可以传给 <code>v-bind:class</code> 一个对象，以动态地切换 class：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>上面的语法表示 <code>active</code> 这个 class 存在与否将取决于数据属性 <code>isActive</code> 是否为 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="external">truthy</a>。</p>
+<p>上面的语法表示 <code>active</code> 这个 class 存在与否将取决于数据属性 <code>isActive</code> 的 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="external">truthiness</a>。</p>
 <p>你可以在对象中传入更多属性来动态切换多个 class。此外，<code>v-bind:class</code> 指令也可以与普通的 class 属性共存。当有如下模板:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span></span></div><div class="line">     <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>和如下 data：</p>
@@ -875,7 +875,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"active text-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>如果你也想根据条件切换列表中的 class，可以用三元表达式：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这样写将始终添加 <code>errorClass</code>，但是只有在 <code>isActive</code> 是 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="external">truthy</a> 时才添加 <code>activeClass</code>。</p>
+<p>这样写将始终添加 <code>errorClass</code>，但是只有在 <code>isActive</code> 是 truthy<sup><a href="#footnote-1">[1]</a></sup> 时才添加 <code>activeClass</code>。</p>
 <p>不过，当有多个条件 class 时这样写有些繁琐。所以在数组语法中也可以使用对象语法：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[&#123; active: isActive &#125;, errorClass]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="用在组件上"><a href="#用在组件上" class="headerlink" title="用在组件上"></a>用在组件上</h3><blockquote>
@@ -890,7 +890,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar baz boo"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>对于带数据绑定 class 也同样适用：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>当 <code>isActive</code> 为真值 (译者注：truthy 不是 <code>true</code>，<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="external">参考这里</a>) 时，HTML 将被渲染成为：</p>
+<p>当 <code>isActive</code> 为 truthy<sup><a href="#footnote-1">[1]</a></sup> 时，HTML 将被渲染成为：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar active"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h2><h3 id="对象语法-1"><a href="#对象语法-1" class="headerlink" title="对象语法"></a>对象语法</h3><p><code>v-bind:style</code> 的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来命名：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -908,6 +908,7 @@
 <p>从 2.3.0 起你可以为 <code>style</code> 绑定中的属性提供一个包含多个值的数组，常用于提供多个带前缀的值，例如：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; display: ['-webkit-box', '-ms-flexbox', 'flex'] &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这样写只会渲染数组中最后一个被浏览器支持的值。在本例中，如果浏览器支持不带浏览器前缀的 flexbox，那么就只会渲染 <code>display: flex</code>。</p>
+<p><small><br><strong>译者注</strong><br><a id="footnote-1"></a>[1] truthy 不是 <code>true</code>，详见 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy" target="_blank" rel="external">MDN</a> 的解释。<br></small></p>
 
   
     <div class="guide-links">
