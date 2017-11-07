@@ -160,6 +160,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -254,6 +255,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -853,8 +855,11 @@
   
   <p>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：<strong>mustache 插值和 <code>v-bind</code> 表达式</strong> (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- in mustaches --&gt;</span></div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- in v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。在这个例子中，<code>capitalize</code> 过滤器函数将会收到 <code>message</code> 的值作为第一个参数。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>你可以在一个组件的选项中定义本地的过滤器：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">filters: &#123;</div><div class="line">  <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">    value = value.toString()</div><div class="line">    <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或者全局定义过滤器：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">  value = value.toString()</div><div class="line">  <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。在上述例子中，<code>capitalize</code> 过滤器函数将会收到 <code>message</code> 的值作为第一个参数。</p>
 <p>过滤器可以串联：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
 <p>在这个例子中，<code>filterA</code> 被定义为接收单个参数的过滤器函数，表达式 <code>message</code> 的值将作为参数传入到函数中，然后继续调用同样被定义为接收单个参数的过滤器函数 <code>filterB</code>，将 <code>filterA</code> 的结果传递到 <code>filterB</code> 中。</p>
