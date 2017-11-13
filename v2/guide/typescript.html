@@ -846,7 +846,12 @@
 <div class="content guide with-sidebar typescript-guide">
   
     
-      
+      <div id="ad">
+  <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
+    <img src="/images/geekbang.jpg" alt="极客时间">
+  </a>
+</div>
+
     
   
   
@@ -878,7 +883,7 @@
 <figure class="highlight ts"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 全局属性</span></div><div class="line"><span class="built_in">console</span>.log(Vue.$myGlobal)</div><div class="line"></div><div class="line"><span class="comment">// 额外的组件选项</span></div><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  myOption: <span class="string">'Hello'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="标注返回值"><a href="#标注返回值" class="headerlink" title="标注返回值"></a>标注返回值</h2><p>因为 Vue 的声明文件天生就具有循环性，TypeScript 可能在推断某个方法的类型的时候存在困难。因此，你可能需要在 <code>render</code> 或 <code>computed</code> 里的方法上标注返回值。</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue, &#123; VNode &#125; <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> Component = Vue.extend(&#123;</div><div class="line">  data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      msg: <span class="string">'Hello'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    <span class="comment">// 需要标注有 `this` 参与运算的返回值类型</span></div><div class="line">    greet (): <span class="built_in">string</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.msg + <span class="string">' world'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    <span class="comment">// 需要标注</span></div><div class="line">    greeting(): <span class="built_in">string</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.greet() + <span class="string">'!'</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// `createElement` 是可推导的，但是 `render` 需要返回值类型</span></div><div class="line">  render (createElement): VNode &#123;</div><div class="line">    <span class="keyword">return</span> createElement(<span class="string">'div'</span>, <span class="keyword">this</span>.greeting)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>如果你发现类型推导或成员补齐不工作了，标注某个方法也许可以帮助你解决这个问题。使用 <code>--noImplicityAny</code> 选项将会帮助你找到这些未标注的方法。</p>
+<p>如果你发现类型推导或成员补齐不工作了，标注某个方法也许可以帮助你解决这个问题。使用 <code>--noImplicitAny</code> 选项将会帮助你找到这些未标注的方法。</p>
 
   
     <div class="guide-links">

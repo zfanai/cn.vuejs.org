@@ -3,26 +3,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <title>March 2016 Update — Vue.js</title>
+    <title>参与 cookbook 贡献 — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/2016/03/14/march-update/">
-    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/2016/03/14/march-update/">
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/cookbook/cookbook-contributions.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/cookbook/cookbook-contributions.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="March 2016 Update — Vue.js">
+    <meta property="og:title" content="参与 cookbook 贡献 — Vue.js">
     <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
     <meta property="og:image" content="https://cn.vuejs.org//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="March 2016 Update — Vue.js">
+    <meta name="twitter:title" content="参与 cookbook 贡献 — Vue.js">
     <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
 
@@ -58,7 +58,7 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
-    <script>window.PAGE_TYPE = ""</script>
+    <script>window.PAGE_TYPE = "cookbook"</script>
 
     <!-- ga -->
     <script>
@@ -87,7 +87,7 @@
   </form>
 </li>
 <li class="nav-dropdown-container learn">
-  <a class="nav-link">学习</a><span class="arrow"></span>
+  <a class="nav-link current">学习</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/v2/guide/" class="nav-link">教程</a></li>
@@ -154,13 +154,13 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://jp.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://br.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://fr.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Français</a></li>
-    <li><a href="https://vi.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -172,16 +172,17 @@
     
       <div id="main" class="fix-sidebar">
         
-          <div class="sidebar blog">
+          
+  <div class="sidebar">
   <div class="sidebar-inner">
     <ul class="main-menu">
       <li>
   <form id="search-form">
-    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
 <li class="nav-dropdown-container learn">
-  <a class="nav-link">学习</a><span class="arrow"></span>
+  <a class="nav-link current">学习</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/v2/guide/" class="nav-link">教程</a></li>
@@ -248,13 +249,13 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">English</a></li>
-    <li><a href="https://jp.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">한국어</a></li>
-    <li><a href="https://br.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Português</a></li>
-    <li><a href="https://fr.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Français</a></li>
-    <li><a href="https://vi.vuejs.org/2016/03/14/march-update/" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/cookbook-contributions.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -262,81 +263,163 @@
 
     </ul>
     <div class="list">
-      <h2>
-        Recent Posts
-        <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px;">
-          <img src="/images/feed.png" style="width: 15px; height: 15px;">
+      <div class="main-sponsor">
+        <span>赞助者</span><br>
+        <a id="main-sponsor-link" target="_blank" style="display: block; margin: 6px 0;">
+          <img id="main-sponsor-image" style="border-radius: 3px;">
         </a>
+        <script>
+        (function () {
+          var API = 'https://xiaozhuanlan.com/example/baner_settings'
+          var req = new XMLHttpRequest()
+          var data = {
+            "link_url": "https://xiaozhuanlan.com",
+            "img_url": "https://diycode.b0.upaiyun.com/photo/2017/15ebaae7745e70876cf20c0ee93bdc9e.png"
+          }
+          req.onreadystatechange = function () {
+            if (req.readyState == 4) {
+            if (req.status >= 200 && req.status < 300) {
+              try {
+                data = JSON.parse(req.responseText)
+              } catch (e) {}
+            }
+            document.getElementById('main-sponsor-link').href = data.link_url
+            document.getElementById('main-sponsor-image').src = data.img_url
+            }
+          }
+          req.open('GET', API)
+          req.send()
+        })()
+        </script>
+      </div>
+      <a class="become-backer" href="/support-vuejs">
+        成为赞助者
+      </a>
+      <h2>
+        
+        
+        
       </h2>
-      <ul style="padding: 0;">
+      <ul class="menu-root">
+  
+    
+    
+    
       
-        <li>
-          <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
-        </li>
+      <!-- Move cookbook sections here once they have -->
+      <!-- at least one recipe -->
+    
+    <li>
+      <a href="/v2/cookbook/index.html" class="sidebar-link">Introduction</a>
+    </li>
+  
+    
+    
+    
       
-        <li>
-          <a href="/2016/03/14/march-update/" class="sidebar-link current">March 2016 Update</a>
-        </li>
+        <li><h3>Vue Instance</h3></li>
       
-        <li>
-          <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
-        </li>
+      <!-- Move cookbook sections here once they have -->
+      <!-- at least one recipe -->
+    
+    <li>
+      <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link">Adding Instance Properties</a>
+    </li>
+  
+    
+    
+    
       
-        <li>
-          <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
-        </li>
-      
-        <li>
-          <a href="/2015/10/28/why-no-template-url/" class="sidebar-link">Why Vue.js doesn't support templateURL</a>
-        </li>
-      
-        <li>
-          <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
-        </li>
-      
-        <li>
-          <a href="/2015/06/11/012-release/" class="sidebar-link">Vue.js 0.12 released!</a>
-        </li>
-      
-        <li>
-          <a href="/2014/12/08/011-component/" class="sidebar-link">0.11 Component Tips</a>
-        </li>
-      
-        <li>
-          <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
-        </li>
-      
-        <li>
-          <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
-        </li>
-      
-      </ul>
+      <!-- Move cookbook sections here once they have -->
+      <!-- at least one recipe -->
+    
+    <li>
+      <a href="/v2/cookbook/cookbook-contributions.html" class="sidebar-link current">参与 cookbook 贡献</a>
+    </li>
+  
+  
+    <li><h3>Components</h3></li>
+    <li><h4>Form Inputs</h4></li>
+    <li><h4>3rd-Party Integrations</h4></li>
+    <li><h3>Transitions</h3></li>
+    <li><h3>Directives</h3></li>
+    <li><h3>Vue Router</h3></li>
+    <li><h3>Vuex</h3></li>
+  
+</ul>
+
     </div>
   </div>
 </div>
-<div class="content with-sidebar blog post">
-  <div id="ad">
+
+
+<div class="content cookbook with-sidebar ">
+  
+    
+      <div id="ad">
   <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
     <img src="/images/geekbang.jpg" alt="极客时间">
   </a>
 </div>
 
-  <h1>March 2016 Update</h1>
-  <h4>Mar 14, 2016</h4>
-  <h2 id="Growing-Community"><a href="#Growing-Community" class="headerlink" title="Growing Community"></a>Growing Community</h2><p>Vue’s growth in the past year has been nothing short of amazing. As of today we are at over 15,000 stars on GitHub, over 500k downloads from npm, and over 2,000 users in the Gitter channel. What’s more exciting though, is that the community successfully organized the first <a href="http://www.meetup.com/London-Vue-js-Meetup/" target="_blank" rel="external">London Vue.js Meetup</a> and the first <a href="http://www.meetup.com/Vuejs-Paris/?scroll=true" target="_blank" rel="external">Paris Vue.js Meetup</a>! A big shoutout to the awesome organizers: <a href="https://twitter.com/JackBarham" target="_blank" rel="external">Jack</a>, <a href="https://twitter.com/onejamesbrowne/" target="_blank" rel="external">James</a> and <a href="https://twitter.com/posva/" target="_blank" rel="external">Eduardo</a>.</p>
-<a id="more"></a>
-<p>If you are interested in connecting with Vue.js users near you and share your experiences in using Vue.js, joining a local Meetup is a great idea - even better, maybe you can organize one :)</p>
-<h2 id="Cool-Things-Being-Built"><a href="#Cool-Things-Being-Built" class="headerlink" title="Cool Things Being Built"></a>Cool Things Being Built</h2><p>More and more amazing things are being built with Vue. There are products like <a href="https://pagekit.com/" target="_blank" rel="external">PageKit</a>, Laravel Spark (coming soon) and <a href="https://v2.statamic.com/" target="_blank" rel="external">Statamic</a>, sleek apps like <a href="http://koel.phanan.net/" target="_blank" rel="external">Koel</a> and <a href="https://github.com/Zhangdroid/Gokotta" target="_blank" rel="external">Gokotta</a>, UI components like <a href="http://yuche.github.io/vue-strap/" target="_blank" rel="external">VueStrap</a> and <a href="http://posva.net/vue-mdl/" target="_blank" rel="external">Vue-MDL</a>, and smooth, interactive experiences like <a href="https://adblitz.withyoutube.com" target="_blank" rel="external">YouTube Adblitz</a> and even the <a href="https://newsfeed.fb.com/" target="_blank" rel="external">Facebook NewsFeed Marketing Site</a>!</p>
-<p>There are many other great projects - too many to be listed here - but you can check them all out in <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="external">awesome-vue</a>. If you’ve built great things with Vue, you should also add them to the list!</p>
-<h2 id="A-New-Vision-For-the-Project"><a href="#A-New-Vision-For-the-Project" class="headerlink" title="A New Vision For the Project"></a>A New Vision For the Project</h2><p>Some of you may have noticed that the development on the Vue.js core repo has slowed down lately - in the meanwhile, a lot of efforts went into other sub projects, namely <a href="https://github.com/vuejs/vuex" target="_blank" rel="external">Vuex</a>, <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a> and the official <a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="external">Webpack project boilerplate</a>. The next step is a new release for <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router</a>, and better documentation/examples demonstrating how Vue.js core, Vuex and vue-router work together in a large single page application.</p>
-<p>All this adds together towards a new vision for the Vue.js project: a progressive framework that can adapt to different complexity levels. Vue.js core will remain “just the view layer” - you can still drop it on whatever existing page to replace jQuery, but the Vue.js project also includes other pieces like vue-router, Vuex, vue-loader/vueify and vue-cli that works together as a more complete, opinionated framework for single page applications. More on this in a later post.</p>
-<h2 id="Vue-js-needs-your-help"><a href="#Vue-js-needs-your-help" class="headerlink" title="Vue.js needs your help!"></a>Vue.js needs your help!</h2><p>Open source is awesome, and I’m proud that Vue.js is helping people build real products all over the world. However, as the scope of the project grows, pushing new features while maintaining everything becomes a very demanding job. The good news is you can help!</p>
-<h3 id="Looking-for-collaborators"><a href="#Looking-for-collaborators" class="headerlink" title="Looking for collaborators"></a>Looking for collaborators</h3><p>There are already users who frequently helps out in various ways, but this is an invitation to make things official. I’m looking for contributors to join the “team”, which is currently mostly just me. If that sounds interesting to you, take a look at the application <a href="https://docs.google.com/forms/d/1SgDgKZqyivEf5xl0EOWNfs68Xy3f4oBzLXIlwlS0BIs/viewform" target="_blank" rel="external">here</a>.</p>
-<h3 id="Looking-for-sponsors"><a href="#Looking-for-sponsors" class="headerlink" title="Looking for sponsors"></a>Looking for sponsors</h3><p>Another way to help making Vue development sustainable is providing direct financial support. The more financial support I receive, the more time I get to spend on making Vue even better.</p>
-<p>If you run a business and is using Vue in a revenue-generating product, it would make business sense to sponsor Vue development: it ensures the project that your product relies on stays healthy and actively maintained. It can also help your exposure in the Vue community and makes it easier to attract Vue developers.</p>
-<p>If you are an individual user and have enjoyed the productivity of using Vue, consider donating as a sign of appreciation - like buying me coffee once in a while :)</p>
-<p>In either case, you can provide recurring funding through Vue’s <a href="https://www.patreon.com/evanyou" target="_blank" rel="external">Patreon campaign</a>, or provide one-time donations via <a href="https://www.paypal.me/evanyou" target="_blank" rel="external">PayPal</a>. There are many ideas for Vue that I have lined up but haven’t had the time to embark on, and I would love to be able to work on them full time - I hope you can help me make that happen!</p>
+    
+  
+  
+    <h1>参与 cookbook 贡献</h1>
+  
+  
+  <h2 id="我们的目标"><a href="#我们的目标" class="headerlink" title="我们的目标"></a>我们的目标</h2><p>Cookbook 为开发者提供了一些示例，涵盖常见的或有趣的用例，并逐步解释更复杂的细节。我们的目标是超越一个简单的示例介绍，展现更广泛适用的概念及其注意事项。</p>
+<p>如果你有兴趣参与贡献，请将您的想法填入 issue 并加上 <strong>cookbook idea</strong> 的标签作为起步，这样我们就可以帮助并引导您完成一个 pull request。在你的想法被认同之后，请尽可能遵循以下模板。有些小节是必须的，有些是可选的。我们强烈建议您遵循其顺序，但这也不是必须的。</p>
+<h2 id="简单的示例"><a href="#简单的示例" class="headerlink" title="简单的示例"></a>简单的示例</h2><p><em>必须的</em></p>
+<ol>
+<li>用一两句话来说明问题。</li>
+<li>用一两句话解释最简单的可能的解决方案。</li>
+<li>显示一小段代码示例。</li>
+<li>用一句话解释它完成了什么。</li>
+</ol>
+<h2 id="关于其价值的细节"><a href="#关于其价值的细节" class="headerlink" title="关于其价值的细节"></a>关于其价值的细节</h2><p><em>必须的</em></p>
+<ol>
+<li>解决人们在看例子时可能遇到的常见问题。(最好以块引用格式呈现)</li>
+<li>显示常见错误的例子，以及如何避免它们。</li>
+<li>用非常简单的代码示例展示好模式和坏模式。</li>
+<li>讨论这个模式令人信服的理由。参考链接不是必需的，但鼓励提供。</li>
+</ol>
+<h2 id="真实的例子"><a href="#真实的例子" class="headerlink" title="真实的例子"></a>真实的例子</h2><p><em>必须的</em></p>
+<p>通过以下方式演示能够为常见或有趣的用例提供支持的代码：</p>
+<ol>
+<li>通过几个简单的设置例子，或者</li>
+<li>嵌入一个 CodePen / JSFiddle 的例子</li>
+</ol>
+<p>如果你选择稍后再提供，那么你仍应该表述它是什么和做什么。</p>
+<h2 id="额外的上下文"><a href="#额外的上下文" class="headerlink" title="额外的上下文"></a>额外的上下文</h2><p><em>可选的</em></p>
+<p>为这个模式写点东西，描述在这个模式下，它会应用到什么地方，为什么它能正常工作；以及在此基础上运行一些代码、提供一些延伸阅读材料，都是非常有帮助的。</p>
+<h2 id="何时避免使用这个模式"><a href="#何时避免使用这个模式" class="headerlink" title="何时避免使用这个模式"></a>何时避免使用这个模式</h2><p><em>可选的</em></p>
+<p>本节不是必需的，但强烈建议。你没有必要写一些特别简单易懂的事项，比如根据状态的改变开关 class，但是对于 mixin 这样的更高阶的模式来说是非常重要的。大多数高阶的问题的答案都是<a href="https://codepen.io/rachsmith/pen/YweZbG" target="_blank" rel="external">“要看情况！”</a>，该部分就包含了这一点。在此，我们要诚实地看待模式何时有用，何时应该避免，什么时候更有意义。</p>
+<h2 id="替代模式"><a href="#替代模式" class="headerlink" title="替代模式"></a>替代模式</h2><p><em>可选的，除非这部分内容在之前已经提供过了</em></p>
+<p>如果你已经在上一节提供了避免使用的条件，那么这一节是必须的。探索其它方法非常重要，这样人们在遇到某些反模式的情形时不至于无所适从。这样做是因为考虑到 web 是一个不同人有着不同代码结构解决不同问题的大舞台。这个应用是大是小？它们要把 Vue 集成到一个现成的项目中还是从零起步构建新项目？它们的用户只是想达成一个目标还是多个？有很多异步数据吗？所有的这些担忧都会影响实现替代品。一篇好的 cookbook 会为开发者提供这些相关信息。</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>文档贡献是需要很多时间的，如果您花时间提交这部分的文档，我们将感激不尽。</p>
 
+  
+  <div class="footer">
+    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    发现错误？想参与编辑？
+    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/cookbook/cookbook-contributions.md" target="_blank">
+      在 Github 上编辑此页！
+    </a>
+  </div>
 </div>
 
         

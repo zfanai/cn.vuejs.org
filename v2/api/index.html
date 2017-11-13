@@ -318,7 +318,12 @@
 <div class="content api with-sidebar ">
   
     
-      
+      <div id="ad">
+  <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
+    <img src="/images/geekbang.jpg" alt="极客时间">
+  </a>
+</div>
+
     
   
   
@@ -1430,6 +1435,8 @@
 <li><p><strong>详细</strong>：</p>
 <p>更新元素的 <code>innerHTML</code> 。<strong>注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译</strong> 。如果试图使用 <code>v-html</code> 组合模板，可以重新考虑是否通过使用组件来替代。</p>
 <p class="tip">在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS 攻击</a>。只在可信内容上使用 <code>v-html</code>，<strong>永不</strong>用在用户提交的内容上。</p>
+
+<p class="tip">在<a href="../guide/single-file-components.html">单文件组件</a>里，<code>scoped</code> 的样式不会应用在 <code>v-html</code> 内部，因为那部分 HTML 没有被 Vue 的模板编译器处理。如果你希望针对 <code>v-html</code> 的内容设置带作用域的 CSS，你可以替换为 <a href="https://vue-loader.vuejs.org/en/features/css-modules.html" target="_blank" rel="external">CSS Modules</a> 或用一个额外的全局 <code>&lt;style&gt;</code> 元素手动设置类似 BEM 的作用域策略。</p>
 </li>
 <li><p><strong>示例</strong>：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"html"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1676,14 +1683,23 @@
 <li><p><strong>参考</strong>：<a href="../guide/components.html#具名插槽">具名插槽</a></p>
 </li>
 </ul>
-<h3 id="slot-scope"><a href="#slot-scope" class="headerlink" title="slot-scope"></a>slot-scope</h3><ul>
+<h3 id="slot-scope"><a href="#slot-scope" class="headerlink" title="slot-scope"></a>slot-scope</h3><blockquote>
+<p>2.5.0 新增</p>
+</blockquote>
+<ul>
 <li><p><strong>预期</strong>：<code>function argument expression</code></p>
 </li>
 <li><p><strong>用法</strong>：</p>
-<p>用于将元素或组件表示为作用域插槽。特性的值应该是可以出现在函数签名的参数位置的合法的 JavaScript 表达式。这意味着在支持的环境中，你还可以在表达式中使用 ES2015 解构。</p>
+<p>用于将元素或组件表示为作用域插槽。特性的值应该是可以出现在函数签名的参数位置的合法的 JavaScript 表达式。这意味着在支持的环境中，你还可以在表达式中使用 ES2015 解构。它在 2.5.0+ 中替代了 <a href="#scope-replaced"><code>scope</code></a>。</p>
 <p>此属性不支持动态绑定。</p>
 </li>
 <li><p><strong>参考</strong>：<a href="../guide/components.html#作用域插槽">Scoped Slots</a></p>
+</li>
+</ul>
+<h3 id="scope-replaced"><a href="#scope-replaced" class="headerlink" title="scope replaced"></a>scope <sup>replaced</sup></h3><p>用于表示一个作为带作用域的插槽的 <code>&lt;template&gt;</code> 元素，它在 2.5.0+ 中被 <a href="#slot-scope"><code>slot-scope</code></a> 替代。</p>
+<ul>
+<li><p><strong>用法：</strong></p>
+<p>除了 <code>scope</code> 只可以用于 <code>&lt;template&gt;</code> 元素，其它和 <a href="#slot-scope"><code>slot-scope</code></a> 都相同。</p>
 </li>
 </ul>
 <h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><ul>

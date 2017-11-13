@@ -846,7 +846,12 @@
 <div class="content guide with-sidebar class-and-style-guide">
   
     
-      
+      <div id="ad">
+  <a href="https://time.geekbang.org/?utm_source=website&utm_medium=vue&utm_campaign=routine&utm_content=tuijian" target="_blank" rel="nofollow">
+    <img src="/images/geekbang.jpg" alt="极客时间">
+  </a>
+</div>
+
     
   
   
@@ -883,7 +888,7 @@
 <h3 id="用在组件上"><a href="#用在组件上" class="headerlink" title="用在组件上"></a>用在组件上</h3><blockquote>
 <p>这个章节假设你已经对 <a href="components.html">Vue 组件</a>有一定的了解。当然你也可以先跳过这里，稍后再回过头来看。</p>
 </blockquote>
-<p>当在一个自定义组件上使用 <code>class</code> 属性时，这些类将被添加到根元素上面。这个元素上已经存在的类不会被覆盖。</p>
+<p>当在一个自定义组件上使用 <code>class</code> 属性时，这些类将被添加到该组件的根元素上面。这个元素上已经存在的类不会被覆盖。</p>
 <p>例如，如果你声明了这个组件：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;p class="foo bar"&gt;Hi&lt;/p&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>然后在使用它的时候添加一些 class：</p>
